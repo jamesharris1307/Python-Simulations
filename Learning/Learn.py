@@ -5,8 +5,10 @@ import math
 pygame.init()
 pygame.display.set_caption("James Harris")
 
+WIDTH, HEIGHT = 1920, 1080
+
 # Set Pygame window resolution
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 running = True
 
@@ -27,7 +29,7 @@ spider_idle = pygame.transform.smoothscale(spider_idle, new_size)
 spider_walk = [pygame.transform.smoothscale(sprite, new_size) for sprite in spider_walk]
 
 # Character Variables
-spider_x, spider_y = 800 // 2, 600 // 2
+spider_x, spider_y = WIDTH // 2, HEIGHT // 2
 spider_speed = 3  # Adjust speed
 current_sprite = spider_idle
 frame_index = 0
