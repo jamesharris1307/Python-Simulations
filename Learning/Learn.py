@@ -1,6 +1,5 @@
 import pygame
 import math
-import random
 
 # Pygame setup
 pygame.init()
@@ -12,15 +11,6 @@ clock = pygame.time.Clock()
 running = True
 
 (pygame.mouse.set_visible(False))
-
-# Circle settings
-circle_radius = 20
-circle_color = (255, 0, 0)  # Red color
-
-# Generate random position for the circle once
-circle_x = random.randint(0, screen.get_width() - circle_radius * 2)
-circle_y = random.randint(0, screen.get_height() - circle_radius * 2)
-
 
 # Load Character Sprites
 spider_idle = pygame.image.load("spiderIdle.png")
@@ -61,10 +51,6 @@ while running:
             running = False
         if pygame.key.get_pressed()[pygame.K_ESCAPE]:
             running = False
-
-    # Random position for the circle
-    circle_x = random.randint(0, screen.get_width() - circle_radius * 2)
-    circle_y = random.randint(0, screen.get_height() - circle_radius * 2)
 
     # Set Background
     screen.fill((50, 50, 50))  # Background Color White
@@ -126,9 +112,6 @@ while running:
 
     # Draw Spider
     screen.blit(rotated_sprite, sprite_rect.topleft)
-
-    # Draw the circle at the random position
-    pygame.draw.circle(screen, circle_color, (circle_x, circle_y), circle_radius)
 
     pygame.display.flip()
 
